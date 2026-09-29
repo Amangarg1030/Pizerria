@@ -1,0 +1,276 @@
+/* ==============================
+   ORDER PIZZA PAGE
+============================== */
+
+/* ==============================
+   ORDER PIZZA PAGE
+============================== */
+
+.order-pizza-page {
+  width: 100%;
+
+  /* REMOVE min-height */
+  min-height: 0;
+
+  /* Let Angular flex layout control the height */
+  flex: 1;
+
+  padding: 25px 7% 30px;
+
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  color: #29374d;
+}
+
+
+/* ==============================
+   PIZZA LIST
+============================== */
+
+.pizza-list {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  /* GAP BETWEEN CARDS */
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+
+/* ==============================
+   PIZZA CARD
+============================== */
+
+.pizza-card {
+  display: grid;
+
+  grid-template-columns: 90px 1fr 130px;
+
+  column-gap: 15px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d9d9d9;
+
+  background-color: #ffffff;
+
+  /* IMPORTANT:
+     No fixed/min height */
+  height: auto;
+  min-height: 0;
+
+  align-items: start;
+}
+
+
+/* ==============================
+   LEFT SECTION
+============================== */
+
+.pizza-left {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.pizza-left h2 {
+  margin: 0;
+
+  color: #29374d;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  font-size: 18px;
+
+  line-height: 1.35;
+
+  font-weight: 600;
+}
+
+
+/* ==============================
+   VEG / NON VEG BOX
+============================== */
+
+.food-type {
+  width: 15px;
+  height: 15px;
+
+  margin-top: 7px;
+
+  display: block;
+
+  background-color: #168b45;
+}
+
+.food-type.non-veg {
+  background-color: #e5232d;
+}
+
+
+/* ==============================
+   PRICE
+============================== */
+
+.price {
+  margin-top: 30px;
+
+  color: #29374d;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* ==============================
+   DETAILS
+============================== */
+
+.pizza-details {
+  padding-top: 1px;
+
+  color: #4d596b;
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+.pizza-details p {
+  margin: 0 0 10px;
+}
+
+.pizza-details .description {
+  margin-bottom: 11px;
+}
+
+.pizza-details strong {
+  color: #29374d;
+
+  font-weight: 700;
+}
+
+
+/* ==============================
+   IMAGE + BUTTON
+============================== */
+
+.pizza-action {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+}
+
+
+.pizza-image {
+  width: 105px;
+  height: 105px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* ==============================
+   ADD TO CART BUTTON
+============================== */
+
+.add-cart-btn {
+  margin-top: 12px;
+
+  padding: 8px 13px;
+
+  border: none;
+
+  border-radius: 2px;
+
+  background-color: #f28a32;
+
+  color: #ffffff;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: background-color 0.2s ease;
+}
+
+
+.add-cart-btn:hover {
+  background-color: #e87520;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 900px) {
+
+  .order-pizza-page {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .pizza-list {
+    grid-template-columns: 1fr;
+
+    row-gap: 20px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .pizza-card {
+    grid-template-columns: 75px 1fr 100px;
+
+    column-gap: 10px;
+
+    padding: 15px 10px;
+  }
+
+  .pizza-left h2 {
+    font-size: 15px;
+  }
+
+  .pizza-details {
+    font-size: 10px;
+  }
+
+  .pizza-image {
+    width: 85px;
+    height: 85px;
+  }
+
+}

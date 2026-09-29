@@ -1,0 +1,1032 @@
+/* =========================================
+   CART PAGE
+========================================= */
+
+.cart-page {
+  min-height: auto;
+
+  background: #ffffff;
+
+  padding: 45px 7% 80px;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  color: #26384f;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   MAIN TWO-COLUMN LAYOUT
+========================================= */
+
+.cart-wrapper {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 0.9fr);
+
+  gap: 28px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   LEFT SIDE - MY CART
+========================================= */
+
+.cart-box {
+  width: 100%;
+
+  border: 1px solid #d7dce2;
+
+  background: #ffffff;
+
+  padding: 20px 25px 25px;
+
+  box-sizing: border-box;
+}
+
+
+.cart-box h1 {
+  margin: 0;
+
+  font-size: 29px;
+
+  font-weight: 400;
+
+  color: #52667d;
+}
+
+
+/* =========================================
+   CART ITEM
+========================================= */
+
+.cart-item {
+  min-height: 115px;
+
+  display: grid;
+
+  grid-template-columns:
+    90px
+    35px
+    minmax(120px, 1fr)
+    120px
+    110px
+    35px;
+
+  align-items: center;
+
+  border-bottom: 1px solid #d7dce2;
+
+  column-gap: 12px;
+}
+
+
+/* =========================================
+   PIZZA IMAGE
+========================================= */
+
+.pizza-image {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+.pizza-image img {
+  width: 75px;
+
+  height: 75px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   VEG / NON-VEG
+========================================= */
+
+.food-type {
+  width: 22px;
+
+  height: 22px;
+
+  border: 2px solid #199447;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+
+.food-type span {
+  width: 11px;
+
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: #199447;
+}
+
+
+.food-type.non-veg {
+  border-color: #df2027;
+}
+
+
+.food-type.non-veg span {
+  background: #df2027;
+}
+
+
+/* =========================================
+   PIZZA INFO
+========================================= */
+
+.pizza-info {
+  min-width: 0;
+}
+
+
+.pizza-info h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: #26384f;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+.pizza-info p {
+  margin: 5px 0 0;
+
+  font-size: 14px;
+
+  color: #52667d;
+}
+
+
+/* =========================================
+   QUANTITY
+========================================= */
+
+.quantity {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+
+.quantity span {
+  min-width: 18px;
+
+  text-align: center;
+
+  font-size: 16px;
+
+  color: #26384f;
+}
+
+
+/* =========================================
+   QUANTITY BUTTONS
+========================================= */
+
+.quantity button {
+  width: 32px;
+
+  height: 34px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  background: #607f9f;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.quantity button:hover {
+  background: #4e6c8a;
+}
+
+
+/* =========================================
+   ITEM TOTAL
+========================================= */
+
+.item-total {
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #26384f;
+
+  text-align: right;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.delete-btn {
+  border: none;
+
+  background: transparent;
+
+  color: #e08aa0;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.delete-btn:hover {
+  color: #d33c5a;
+
+  transform: scale(1.1);
+}
+
+
+/* =========================================
+   EMPTY CART
+========================================= */
+
+.empty-cart {
+  padding: 55px 20px;
+
+  text-align: center;
+
+  color: #718096;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   PIZZA SUBTOTAL
+========================================= */
+
+.subtotal {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-top: 20px;
+
+  font-size: 19px;
+
+  color: #52667d;
+}
+
+
+.subtotal strong {
+  font-weight: 600;
+
+  color: #26384f;
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.right-section {
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   SUMMARY BOX
+========================================= */
+
+.summary-box {
+  width: 100%;
+
+  border: 1px solid #d7dce2;
+
+  background: #ffffff;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+}
+
+
+.summary-box h2 {
+  margin: 0 0 25px;
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+  color: #52667d;
+}
+
+
+/* =========================================
+   SUMMARY ROW
+========================================= */
+
+.summary-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 22px;
+
+  font-size: 16px;
+
+  color: #52667d;
+}
+
+
+.summary-row span:last-child {
+  color: #26384f;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   INGREDIENTS HEADER
+========================================= */
+
+.ingredients-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 14px 0;
+
+  border-top: 1px solid #d7dce2;
+
+  border-bottom: 1px solid #d7dce2;
+
+  color: #52667d;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.ingredients-header:hover {
+  color: #26384f;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.arrow {
+  display: inline-block;
+
+  margin-left: 6px;
+
+  font-size: 18px;
+
+  transition: transform 0.2s ease;
+}
+
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================
+   INGREDIENT LIST
+========================================= */
+
+.ingredients-list {
+  padding: 5px 0;
+
+  background: #fafbfc;
+
+  border-bottom: 1px solid #d7dce2;
+}
+
+
+/* =========================================
+   INGREDIENT ROW
+========================================= */
+
+.ingredient-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 11px 4px;
+
+  border-bottom: 1px solid #edf0f3;
+
+  color: #52667d;
+
+  font-size: 14px;
+}
+
+
+.ingredient-row:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   INGREDIENT INFO
+========================================= */
+
+.ingredient-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.ingredient-info span {
+  color: #52667d;
+}
+
+
+/* =========================================
+   INGREDIENT PRICE
+========================================= */
+
+.ingredient-row > span:last-child {
+  color: #26384f;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   NO INGREDIENTS
+========================================= */
+
+.no-ingredients {
+  padding: 15px 5px;
+
+  text-align: center;
+
+  color: #8a96a3;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   SUMMARY DIVIDER
+========================================= */
+
+.summary-divider {
+  height: 1px;
+
+  background: #d7dce2;
+
+  margin: 22px 0;
+}
+
+
+/* =========================================
+   GRAND TOTAL
+========================================= */
+
+.total-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-size: 20px;
+
+  color: #52667d;
+}
+
+
+.total-row strong {
+  font-weight: 600;
+
+  color: #26384f;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.cart-actions {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  margin-top: 18px;
+}
+
+
+.pay-btn,
+.clear-btn {
+  width: 115px;
+
+  height: 46px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+/* PAY */
+
+.pay-btn {
+  background: #f3c62d;
+
+  color: #ffffff;
+}
+
+
+.pay-btn:hover:not(:disabled) {
+  background: #e7b900;
+
+  transform: translateY(-1px);
+}
+
+
+/* CLEAR */
+
+.clear-btn {
+  background: #344b6a;
+
+  color: #ffffff;
+}
+
+
+.clear-btn:hover:not(:disabled) {
+  background: #263b57;
+
+  transform: translateY(-1px);
+}
+
+
+/* DISABLED */
+
+.pay-btn:disabled,
+.clear-btn:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================
+   ORDER SUCCESS
+========================================= */
+
+.order-success {
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 50px 20px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      #fff4dc,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      #ffe9d2,
+      transparent 35%
+    ),
+    #fffdf9;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   SUCCESS CIRCLE
+========================================= */
+
+.success-circle {
+  width: 75px;
+
+  height: 75px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8f7ed;
+
+  border: 3px solid #3ca866;
+
+  color: #29904f;
+
+  font-size: 42px;
+
+  font-weight: 600;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================
+   SUCCESS HEADING
+========================================= */
+
+.order-success h1 {
+  margin: 5px 0 10px;
+
+  color: #293d55;
+
+  font-size: 32px;
+
+  font-weight: 600;
+}
+
+
+.order-success p {
+  margin: 6px 0;
+
+  color: #63748a;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   ORDERED ITEMS
+========================================= */
+
+.ordered-items {
+  width: 650px;
+
+  max-width: 100%;
+
+  margin-top: 25px;
+
+  padding: 20px;
+
+  background: #faf8f4;
+
+  border: 1px solid #eee7dc;
+
+  border-radius: 7px;
+
+  box-sizing: border-box;
+
+  text-align: left;
+}
+
+
+.ordered-items h3 {
+  margin: 0 0 15px;
+
+  color: #293d55;
+
+  font-size: 18px;
+
+  font-weight: 500;
+}
+
+
+.ordered-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 11px 0;
+
+  border-bottom: 1px solid #e9e3da;
+
+  color: #52667d;
+
+  font-size: 14px;
+}
+
+
+.ordered-item:last-child {
+  border-bottom: none;
+}
+
+
+.ordered-item strong {
+  color: #26384f;
+}
+
+
+/* =========================================
+   DELIVERY MESSAGE
+========================================= */
+
+.delivery-message {
+  margin-top: 20px !important;
+
+  padding: 15px 20px;
+
+  background: #f1f6fb;
+
+  border-left: 4px solid #607f9f;
+
+  border-radius: 5px;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .cart-page {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .cart-wrapper {
+    grid-template-columns: minmax(0, 1.7fr) minmax(290px, 0.9fr);
+
+    gap: 20px;
+  }
+
+  .cart-item {
+    grid-template-columns:
+      75px
+      30px
+      minmax(100px, 1fr)
+      100px
+      90px
+      25px;
+
+    column-gap: 8px;
+  }
+
+  .pizza-image img {
+    width: 65px;
+    height: 65px;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - SMALL TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .cart-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .right-section {
+    max-width: 550px;
+
+    margin: 0 auto;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .cart-page {
+    padding: 25px 15px 50px;
+  }
+
+  .cart-box {
+    padding: 18px 15px 20px;
+  }
+
+  .cart-box h1 {
+    font-size: 25px;
+  }
+
+  .cart-item {
+    grid-template-columns:
+      60px
+      30px
+      1fr;
+
+    row-gap: 12px;
+
+    padding: 18px 0;
+  }
+
+  .pizza-image img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .food-type {
+    width: 20px;
+    height: 20px;
+  }
+
+  .food-type span {
+    width: 10px;
+    height: 10px;
+  }
+
+  .pizza-info h2 {
+    font-size: 16px;
+  }
+
+  .quantity {
+    grid-column: 3;
+
+    justify-content: flex-start;
+  }
+
+  .item-total {
+    grid-column: 3;
+
+    text-align: left;
+  }
+
+  .delete-btn {
+    grid-column: 3;
+
+    justify-self: start;
+  }
+
+  .summary-box {
+    padding: 18px;
+  }
+
+  .cart-actions {
+    gap: 15px;
+  }
+
+  .pay-btn,
+  .clear-btn {
+    width: 110px;
+  }
+
+  .order-success h1 {
+    font-size: 27px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .cart-item {
+    grid-template-columns:
+      55px
+      25px
+      1fr;
+  }
+
+  .pizza-image img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .quantity button {
+    width: 30px;
+
+    height: 34px;
+
+    font-size: 18px;
+  }
+
+  .summary-row {
+    font-size: 14px;
+  }
+
+  .total-row {
+    font-size: 18px;
+  }
+
+}
+
+/* =========================================
+   ORDER MORE BUTTON
+========================================= */
+
+.order-more-btn {
+  margin-top: 25px;
+
+  width: 150px;
+  height: 45px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #f28c3c;
+  color: #ffffff;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.order-more-btn:hover {
+  background: #dc7426;
+
+  transform: translateY(-1px);
+}

@@ -1,0 +1,65 @@
+<div class="order-pizza-page">
+
+  <div class="pizza-list">
+
+    <div class="pizza-card" *ngFor="let pizza of pizzas">
+
+      <!-- LEFT: Name, type and price -->
+      <div class="pizza-left">
+
+        <h2>{{ pizza.name }}</h2>
+
+        <span
+          class="food-type"
+          [class.non-veg]="pizza.type.toLowerCase() === 'nonveg'">
+        </span>
+
+        <div class="price">
+          ₹{{ pizza.price }}.00
+        </div>
+
+      </div>
+
+
+      <!-- MIDDLE: Description and details -->
+      <div class="pizza-details">
+
+        <p class="description">
+          {{ pizza.description }}
+        </p>
+
+        <p>
+          <strong>Ingredients :</strong>
+          {{ pizza.ingredients.join(', ') }}
+        </p>
+
+        <p>
+          <strong>Toppings :</strong>
+          {{ pizza.topping.join(', ') }}
+        </p>
+
+      </div>
+
+
+      <!-- RIGHT: Image + button -->
+      <div class="pizza-action">
+
+        <img
+          [src]="pizza.image"
+          [alt]="pizza.name"
+          class="pizza-image">
+
+        <button
+          type="button"
+          class="add-cart-btn"
+          (click)="addToCart(pizza)">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

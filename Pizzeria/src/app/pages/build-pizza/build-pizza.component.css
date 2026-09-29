@@ -1,0 +1,491 @@
+/* =========================================
+   BUILD PIZZA PAGE
+========================================= */
+
+.build-page {
+  min-height: calc(100vh - 70px);
+
+  padding: 35px 20px 60px;
+
+  background: #ffffff;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  color: #293d55;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.build-container {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+}
+
+
+/* =========================================
+   INGREDIENT SECTION
+========================================= */
+
+.ingredients-section {
+  width: 40%;
+
+  min-width: 500px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   INGREDIENT TABLE
+========================================= */
+
+.ingredients-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   TABLE ROW
+========================================= */
+
+.table-row {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    90px
+    80px;
+
+  align-items: center;
+
+  min-height: 55px;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.table-header {
+  min-height: 42px;
+
+  background: #344b6a;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  cursor: default;
+
+  border-bottom: none;
+}
+
+
+/* Header alignment */
+
+.table-header > div:first-child {
+  padding-left: 15px;
+}
+
+.table-header > div:nth-child(2),
+.table-header > div:nth-child(3) {
+  text-align: center;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.table-row:not(.table-header):hover {
+  background: #f8fafc;
+}
+
+
+/* =========================================
+   SELECTED ROW
+========================================= */
+
+.table-row.selected {
+  background: #fff8ef;
+}
+
+
+/* =========================================
+   INGREDIENT CELL
+========================================= */
+
+.ingredient-cell {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding-left: 10px;
+
+  min-width: 0;
+}
+
+
+/* =========================================
+   INGREDIENT IMAGE
+========================================= */
+
+.ingredient-image {
+  width: 55px;
+
+  height: 55px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+
+.ingredient-image img {
+  width: 50px;
+
+  height: 50px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   INGREDIENT NAME
+========================================= */
+
+.ingredient-cell span {
+  color: #293d55;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.price-cell {
+  text-align: center;
+
+  color: #293d55;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   SELECT CELL
+========================================= */
+
+.select-cell {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   ADD SECTION
+========================================= */
+
+.add-section {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #f28c3c;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.add-section input {
+  width: 13px;
+
+  height: 13px;
+
+  margin: 0;
+
+  cursor: pointer;
+
+  accent-color: #f28c3c;
+}
+
+
+/* =========================================
+   TOTAL COST
+========================================= */
+
+.total-cost {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 12px;
+
+  padding-left: 10px;
+
+  color: #293d55;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+
+.total-cost strong {
+  color: #293d55;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   BUILD BUTTON SECTION
+========================================= */
+
+.build-button-section {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 12px;
+}
+
+
+/* =========================================
+   BUILD PIZZA BUTTON
+========================================= */
+
+.build-pizza-btn {
+  min-width: 125px;
+
+  padding: 9px 18px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  background: #344b6a;
+
+  color: #ffffff;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.build-pizza-btn:hover:not(:disabled) {
+  background: #263b57;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   DISABLED BUTTON
+========================================= */
+
+.build-pizza-btn:disabled {
+  background: #bfc5cc;
+
+  color: #ffffff;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .ingredients-section {
+    width: 50%;
+
+    min-width: 480px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 750px) {
+
+  .build-page {
+    padding: 30px 15px 50px;
+  }
+
+  .ingredients-section {
+    width: 70%;
+
+    min-width: 450px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+  .build-page {
+    padding: 25px 10px 40px;
+  }
+
+  .ingredients-section {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .table-row {
+    grid-template-columns:
+      1fr
+      70px
+      65px;
+
+    min-height: 52px;
+  }
+
+  .ingredient-cell {
+    gap: 8px;
+
+    padding-left: 5px;
+  }
+
+  .ingredient-image {
+    width: 45px;
+
+    height: 45px;
+  }
+
+  .ingredient-image img {
+    width: 40px;
+
+    height: 40px;
+  }
+
+  .ingredient-cell span {
+    font-size: 12px;
+  }
+
+  .price-cell {
+    font-size: 12px;
+  }
+
+  .add-section {
+    font-size: 11px;
+
+    gap: 4px;
+  }
+
+  .add-section input {
+    width: 12px;
+
+    height: 12px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .table-row {
+    grid-template-columns:
+      1fr
+      60px
+      55px;
+  }
+
+  .ingredient-image {
+    width: 40px;
+
+    height: 40px;
+  }
+
+  .ingredient-image img {
+    width: 36px;
+
+    height: 36px;
+  }
+
+  .ingredient-cell {
+    gap: 5px;
+  }
+
+  .ingredient-cell span {
+    font-size: 11px;
+  }
+
+  .price-cell {
+    font-size: 11px;
+  }
+
+}

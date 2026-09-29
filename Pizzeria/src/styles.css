@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100%;
+
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+
+/* =========================================
+   ANGULAR ROOT
+========================================= */
+
+app-root {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+app-navbar {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+router-outlet {
+  display: none;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+app-footer {
+  display: block;
+
+  width: 100%;
+
+  margin-top: auto;
+  padding: 0;
+
+  flex-shrink: 0;
+}

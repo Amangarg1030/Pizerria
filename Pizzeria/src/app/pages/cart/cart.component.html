@@ -1,0 +1,420 @@
+<div class="cart-page">
+
+  <!-- =====================================
+       CART CONTENT
+  ====================================== -->
+
+  <div
+    class="cart-wrapper"
+    *ngIf="!orderPlaced"
+  >
+
+    <!-- =====================================
+         LEFT SIDE : MY CART
+    ====================================== -->
+
+    <div class="cart-box">
+
+      <h1>My Cart</h1>
+
+
+      <!-- PIZZA ITEMS -->
+
+      <div
+        class="cart-item"
+        *ngFor="let item of cart.items"
+      >
+
+        <!-- Pizza Image -->
+
+        <div class="pizza-image">
+
+          <img
+            [src]="item.image"
+            [alt]="item.name"
+          >
+
+        </div>
+
+
+        <!-- Veg / Non-Veg -->
+
+        <div
+          class="food-type"
+          [class.non-veg]="isNonVeg(item.type)"
+        >
+
+          <span></span>
+
+        </div>
+
+
+        <!-- Pizza Details -->
+
+        <div class="pizza-info">
+
+          <h2>
+            {{ item.name }}
+          </h2>
+
+          <p>
+            ₹{{ item.price }}
+          </p>
+
+        </div>
+
+
+        <!-- Quantity -->
+
+        <div class="quantity">
+
+          <button
+            type="button"
+            (click)="
+              updateQuantity(
+                item._id!,
+                item.quantity - 1
+              )
+            "
+          >
+            −
+          </button>
+
+
+          <span>
+            {{ item.quantity }}
+          </span>
+
+
+          <button
+            type="button"
+            (click)="
+              updateQuantity(
+                item._id!,
+                item.quantity + 1
+              )
+            "
+          >
+            +
+          </button>
+
+        </div>
+
+
+        <!-- Item Total -->
+
+        <div class="item-total">
+
+          ₹{{ item.price * item.quantity }}.00
+
+        </div>
+
+
+        <!-- Delete -->
+
+        <button
+          type="button"
+          class="delete-btn"
+          (click)="removeItem(item._id!)"
+        >
+          🗑
+        </button>
+
+      </div>
+
+
+      <!-- =====================================
+           EMPTY CART
+      ====================================== -->
+
+      <div
+        class="empty-cart"
+        *ngIf="
+          cart.items.length === 0 &&
+          cart.ingredients.length === 0
+        "
+      >
+
+        Your cart is empty 🍕
+
+      </div>
+
+
+      <!-- =====================================
+           PIZZA SUBTOTAL
+      ====================================== -->
+
+      <div
+        class="subtotal"
+        *ngIf="cart.items.length > 0"
+      >
+
+        <span>
+          Sub Total :
+        </span>
+
+        <strong>
+          ₹{{ getPizzaTotal() }}.00
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================
+         RIGHT SIDE : SUMMARY
+    ====================================== -->
+
+    <div class="right-section">
+
+      <div class="summary-box">
+
+        <h2>
+          The total amount of
+        </h2>
+
+
+        <!-- Pizza -->
+
+        <div class="summary-row">
+
+          <span>
+            Pizza
+          </span>
+
+          <span>
+            ₹{{ getPizzaTotal() }}.00
+          </span>
+
+        </div>
+
+
+        <!-- =================================
+             INGREDIENTS DROPDOWN
+        ================================== -->
+
+        <div
+          class="ingredients-header"
+          (click)="toggleIngredients()"
+        >
+
+          <span>
+
+            Ingredients
+
+            <span
+              class="arrow"
+              [class.open]="showIngredients"
+            >
+              ⌄
+            </span>
+
+          </span>
+
+
+          <span>
+            ₹{{ getIngredientsTotal() }}.00
+          </span>
+
+        </div>
+
+
+        <!-- Selected Ingredients -->
+
+        <div
+          class="ingredients-list"
+          *ngIf="showIngredients"
+        >
+
+          <div
+            class="ingredient-row"
+            *ngFor="let ingredient of cart.ingredients"
+          >
+
+            <div class="ingredient-info">
+
+              <span>
+
+                {{ ingredient.name }}
+
+                <ng-container
+                  *ngIf="ingredient.quantity > 1"
+                >
+                  × {{ ingredient.quantity }}
+                </ng-container>
+
+              </span>
+
+            </div>
+
+
+            <span>
+
+              ₹{{ ingredient.price * ingredient.quantity }}.00
+
+            </span>
+
+          </div>
+
+
+          <!-- No Ingredients -->
+
+          <div
+            class="no-ingredients"
+            *ngIf="cart.ingredients.length === 0"
+          >
+
+            No ingredients selected
+
+          </div>
+
+        </div>
+
+
+        <!-- Divider -->
+
+        <div class="summary-divider"></div>
+
+
+        <!-- GRAND TOTAL -->
+
+        <div class="total-row">
+
+          <span>
+            Total :
+          </span>
+
+          <strong>
+            ₹{{ getGrandTotal() }}.00
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================
+           ACTION BUTTONS
+      ================================== -->
+
+      <div class="cart-actions">
+
+        <button
+          type="button"
+          class="pay-btn"
+          (click)="checkout()"
+          [disabled]="
+            cart.items.length === 0 &&
+            cart.ingredients.length === 0
+          "
+        >
+          Pay
+        </button>
+
+
+        <button
+          type="button"
+          class="clear-btn"
+          (click)="clearCart()"
+          [disabled]="
+            cart.items.length === 0 &&
+            cart.ingredients.length === 0
+          "
+        >
+          Clear
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================
+       ORDER SUCCESS
+  ====================================== -->
+
+  <div
+    class="order-success"
+    *ngIf="orderPlaced"
+  >
+
+    <div class="success-circle">
+      ✓
+    </div>
+
+
+    <h1>
+      Order Placed Successfully!
+    </h1>
+
+
+    <p>
+      Thank you for ordering with Pizzeria 🍕
+    </p>
+
+
+    <p>
+      We hope you get back soon!
+    </p>
+
+
+    <!-- =================================
+         ORDERED PIZZAS
+    ================================== -->
+
+    <div
+      class="ordered-items"
+      *ngIf="orderedItems.length > 0"
+    >
+
+      <h3>
+        Your Order
+      </h3>
+
+
+      <div
+        class="ordered-item"
+        *ngFor="let item of orderedItems"
+      >
+
+        <span>
+          {{ item.name }} × {{ item.quantity }}
+        </span>
+
+
+        <strong>
+          ₹{{ item.price * item.quantity }}.00
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================
+         DELIVERY MESSAGE
+    ================================== -->
+
+    <p class="delivery-message">
+
+      🚴 Your order will arrive at your address shortly.
+
+    </p>
+    <!-- =================================
+     ORDER MORE BUTTON
+================================= -->
+
+<button
+  type="button"
+  class="order-more-btn"
+  (click)="orderMore()"
+>
+  Order More
+</button>
+
+  </div>
+
+</div>

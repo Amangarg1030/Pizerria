@@ -1,0 +1,142 @@
+<div class="build-page">
+
+  <!-- =========================================
+       BUILD PIZZA CONTENT
+  ========================================== -->
+
+  <div class="build-container">
+
+    <!-- =========================================
+         INGREDIENT TABLE
+    ========================================== -->
+
+    <div class="ingredients-section">
+
+      <div class="ingredients-table">
+
+        <!-- =====================================
+             TABLE HEADER
+        ====================================== -->
+
+        <div class="table-row table-header">
+
+          <div>Ingredient</div>
+
+          <div>Price</div>
+
+          <div>Add</div>
+
+        </div>
+
+
+        <!-- =====================================
+             INGREDIENT ROWS
+        ====================================== -->
+
+        <div
+          class="table-row"
+          *ngFor="let ingredient of ingredients"
+          [class.selected]="isSelected(ingredient)"
+          (click)="selectIngredient(ingredient)"
+        >
+
+          <!-- INGREDIENT -->
+          <div class="ingredient-cell">
+
+            <div class="ingredient-image">
+
+              <img
+                [src]="ingredient.image"
+                [alt]="ingredient.tname"
+              >
+
+            </div>
+
+            <span>
+              {{ ingredient.tname }}
+            </span>
+
+          </div>
+
+
+          <!-- PRICE -->
+          <div class="price-cell">
+
+            ₹{{ ingredient.price }}
+
+          </div>
+
+
+          <!-- ADD / CHECKBOX -->
+          <div class="select-cell">
+
+            <div class="add-section">
+
+              <input
+                type="checkbox"
+                [checked]="isSelected(ingredient)"
+                (click)="$event.stopPropagation()"
+                (change)="selectIngredient(ingredient)"
+              >
+
+              <span>
+                Add
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================================
+           TOTAL COST
+      ========================================== -->
+
+      <div class="total-cost">
+
+        <span>
+          Total Cost:
+        </span>
+
+        <strong>
+          ₹{{ totalPrice }}
+        </strong>
+
+      </div>
+
+
+      <!-- =========================================
+           BUILD PIZZA BUTTON
+      ========================================== -->
+
+      <div class="build-button-section">
+
+        <button
+          type="button"
+          class="build-pizza-btn"
+          [disabled]="
+            selectedIngredients.length === 0 ||
+            addingToCart
+          "
+          (click)="addPizzaToCart()"
+        >
+
+          {{
+            addingToCart
+              ? 'Building...'
+              : 'Build Your Pizza'
+          }}
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
